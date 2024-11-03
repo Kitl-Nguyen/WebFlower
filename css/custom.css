@@ -1,0 +1,67 @@
+
+.owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+    pointer-events: auto;
+    opacity: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	background-color: transparent !important;
+	outline: none;
+}
+
+/* Hiển thị các nút điều hướng khi hover vào slider */
+.owl-carousel:hover .owl-nav .owl-prev,
+.owl-carousel:hover .owl-nav .owl-next {
+    opacity: 1;
+	background-color: black;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    left: -1rem;
+}
+
+.owl-carousel .owl-nav .owl-next {
+    right: -1rem;
+}
+
+.owl-carousel .owl-nav .owl-prev::before,
+.owl-carousel .owl-nav .owl-next::before {
+    content: '';
+    position: absolute;
+    width: 3.5rem; 
+    height: 3.5rem;
+	background: url('../img/btn-slider.png');
+    background-position: center;
+    z-index: 2; 
+}
+
+.owl-carousel .owl-nav .owl-next::before {
+    transform: scaleX(-1); 
+}
+
+/* Hình thoi nền trắng với viền đen nằm ở after */
+.owl-carousel .owl-nav .owl-prev::after,
+.owl-carousel .owl-nav .owl-next::after {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border: 2px solid black;
+    transform: rotate(45deg); 
+    border-radius: 10%; 
+    z-index: 1; 
+}
